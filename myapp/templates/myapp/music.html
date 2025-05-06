@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Player</title>
+    <style>
+
+       /* .c{
+        background-image: "https://logos-world.net/wp-content/uploads/2020/04/Instagram-Logo.png";
+       } */
+        body { font-family: Arial;  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); 
+        background-size: 1000px;              /* 👈 Stretch image to cover full screen */
+        background-position: center;         /* 👈 Keep it centered */
+        background-repeat: no-repeat; 
+        text-align: center; padding: 50px; }
+        input { padding: 10px; margin-bottom: 20px; width: 300px; }
+        audio { margin-top: 20px; width: 100%; max-width: 500px; }
+        .song{
+            margin-bottom: 20px;
+        }
+        #songsList {
+    border: 2px solid pink;  /* 👈 Pink border added */
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* optional: translucent background */
+    max-width: 600px;
+    margin: auto;
+}
+
+
+
+    </style>
+</head>
+<body class="c">
+    <h2>Search & Play Music</h2>
+    <input type="text" id="search" placeholder="Search songs..." onkeyup="filterSongs()">
+
+    <div id="songsList">
+        <div class="song">
+    
+            
+
+            <p><strong>Afsos(Ap dhillon).mp3</strong></p>
+            <audio controls>
+                <source src="/media/songs/songs1.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="song">
+            <p><strong>Desi kalakar(Yo Yo Honey Singh).mp3</strong></p>
+            <audio controls>
+                <source src="/media/songs/songs2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="song">
+            <p><strong>Janam janam(Sharukh khan).mp3</strong></p>
+            <audio controls>
+                <source src="/media/songs/songs3.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="song">
+            <p><strong>Rabb to vi sohni meri maa ve loko(Khan mallan).mp3</strong></p>
+            <audio controls>
+                <source src="/media/songs/songs4.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="song">
+            <p><strong>Dil diya gallan(Salman khan).mp3</strong></p>
+            <audio controls>
+                <source src="/media/songs/songs5.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="song">
+            <p><strong>Qawali(Nursat Fateh ali khan).mp3</strong></p>
+            <audio controls>
+                <source src="/media/songs/songs6.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <!-- <script>
+        function filterSongs() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let songs = document.getElementsByClassName('song');
+            for (let i = 0; i < songs.length; i++) {
+                let text = songs[i].innerText.toLowerCase();
+                songs[i].style.display = text.includes(input) ? '' : 'none';
+            }
+        } -->
+    <!-- </script> -->
+    <script>
+        function filterSongs() {
+            let input = document.getElementById('search').value.toLowerCase();
+            let songs = document.getElementsByClassName('song');
+            for (let i = 0; i < songs.length; i++) {
+                let text = songs[i].innerText.toLowerCase();
+                songs[i].style.display = text.includes(input) ? '' : 'none';
+            }
+        }
+    
+        // Ensure only one audio plays at a time
+        const audios = document.querySelectorAll("audio");
+        audios.forEach(audio => {
+            audio.addEventListener("play", function() {
+                audios.forEach(otherAudio => {
+                    if (otherAudio !== audio) {
+                        otherAudio.pause();
+                    }
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

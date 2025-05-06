@@ -1,0 +1,329 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Dashboard</title>
+    <style>
+      
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #f5e6e6;
+    text-align: center;
+    margin: 0;
+}
+.user {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 10px;
+    color: white;
+}
+
+.container{
+    align-items:right;
+    color: white;
+}
+.gautam{
+    color: black;
+}
+
+/* Instagram Header */
+.insta-header {
+    background: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 24px;
+    border-bottom: 1px solid #333;
+}
+
+/* Stories Section */
+.stories {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px;
+    gap: 15px;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.story img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid #ff4500;
+}
+
+.story p {
+    font-size: 12px;
+}
+
+
+/* Post Header */
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile i {
+    color: #1da1f2;
+}
+
+/* Post Image */
+/* Make sure the post container has a specific width and prevents overflow */
+.post {
+    width: 350px;
+    background: #111;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden; /* Prevent content from overflowing the container */
+}
+
+/* Ensure the image fits properly inside the container without overflowing */
+    .post-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+
+
+}
+
+
+
+/* Post Actions */
+.post-actions {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    padding: 5px;
+}
+.dd{
+    color: #d6249f;
+}
+
+.post-actions i {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: red;
+
+}
+.post-actions span {
+    font-size: 16px;
+    color: white;
+    padding-left: 5px; /* Add some space between the button and the likes count */
+}
+
+/* Likes and Caption */
+.likes, .caption {
+    text-align: left;
+    padding: 5px 10px;
+}
+.message-link {
+    text-align: right;
+    padding: 10px 20px 0 0;
+}
+
+.message-link a {
+    color: #d6249f;
+    font-weight: bold;
+    text-decoration:none;
+}
+
+
+/* Instagram Bottom Navbar */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #111;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom-nav i {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+        .logout-button {
+            background: white;
+            color: #d6249f;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .logout-button:hover {
+            background: #d6249f;
+            color: white;
+            transform: scale(1.05);
+        }
+        .t{
+            align-items: end;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="logout-button" onclick="logout()">Logout</button>
+    </div>
+  <!-- Instagram Header -->
+  <div class="insta-header">
+    <h2>Instagram</h2>
+</div>
+<div class="message-link">
+    <a href="{% url 'message'%}">message</a>
+</div>
+<!-- Story Section -->
+<div class="stories">
+    <div class="story">
+        <img src="{% static 'your.jpeg'%}" alt="Your Story">
+        <p class="gautam">Your Story</p>
+    </div>
+    <div class="story">
+        <img src="https://api.dicebear.com/6.x/adventurer/svg?seed=Leo" alt="User">
+        <p class="gautam">Aayushi_dhawan</p>
+    </div>
+    <div class="story">
+        <img src="https://i.pravatar.cc/150?img=3" alt="User">
+        <p class="gautam">Raghav_mittal</p>
+    </div>
+    <div class="story">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+        <p class="gautam">Tanish_31</p>
+    </div>
+    <div class="story">
+        <img src="{% static 'At.png'%}" alt="User">
+        <p class="gautam">Atuliya_42</p>
+    </div>
+
+    <div class="story">
+        <img src="{% static 'bhanu.jpeg'%}" alt="User">
+        <p class="gautam">bhanu13</p>
+    </div>
+
+    <div class="story">
+        <img src="{% static 'keshav.jpeg'%}" alt="User">
+        <p class="gautam">keshav22</p>
+    </div>
+    
+    <div class="story">
+        <img src="{% static 'jasnoor.jpeg'%}" alt="User">
+        <p class="gautam">jasnoor_20</p>
+    </div>
+    <div class="story">
+        <img src="https://api.dicebear.com/6.x/bottts/svg?seed=Gamer" alt="User">
+        <p class="gautam">mayank_45</p>
+    </div>
+    <div class="story">
+        <img src="{% static 'cartoon.jpeg'%}" alt="User">
+        <p class="gautam">amit34</p>
+    </div>
+    <div class="story">
+        <img src="{% static 'bhavish.jpeg'%}" alt="User">
+        <p class="gautam">bhavish45</p>
+    </div>
+    <div class="story">
+        <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="User">
+        <p class="gautam">aryan18</p>
+    </div>
+    <div class="story">
+        <img src="{% static 'ashnoor.jpeg'%}" alt="User">
+        <p class="gautam">ashnoor18</p>
+    </div>
+    <div class="story">
+        <img src="{% static 'gurumeet.jpeg'%}" alt="User">
+        <p class="gautam">gurumeet18</p>
+    </div>
+    <div class="story">
+        <img src="{% static 'paras.jpeg'%}" alt="User">
+        <p class="gautam">paras07</p>
+    </div>
+    <div class="story">
+        <img src="{% static 'aditya.jpeg'%}" alt="User">
+        <p class="gautam">aditya14</p>
+    </div>
+</div>
+ <!-- Stories Section -->
+ <h2>Dashboard</h2>
+
+ {% for post in posts %}
+ <div class="post">
+     <div class="user">@{{ post.user.username }}</div>
+     <img class="post-img" src="{{ post.image.url }}" alt="Post Image">
+     <div class="caption">{{ post.caption }}</div>
+     <div class="post-actions">
+        <button onclick="likePost('{{ post.id }}')">
+            ❤️ </button>
+        <span id="likes-count-{{ post.id }}">{{ post.likes.count }}</span> likes
+    </div>
+     <form method="POST" action="{% url 'delete_post' post.id %}" style="margin-top: 10px;">
+        {% csrf_token %}
+        <button type="submit" style="background-color:red; color:white; padding:10px; border:none; border-radius:5px;">
+            Delete Post
+        </button>
+ </div>
+{% empty %}
+ <div class="no-posts">No posts yet.</div>
+{% endfor %}
+
+<div class="bottom-nav">
+ <a class="dd" href="{% url 'dashboard' %}">Home</a>
+ <a class="dd"href="{% url 'search' %}">Search</a>
+ <a class="dd" href="{% url 'reels' %}">Reels</a>
+ <a class="dd" href="{% url 'music' %}">MUSIC</a>
+ <a class="dd" href="{% url 'create_post' %}">Create</a>
+ <a  class="dd" href="{% url 'profile' %}">Profile</a>
+</div>
+
+<script>
+    function logout() {
+        alert("Logging out...");
+        window.location.href = "{% url 'logout' %}";
+    }
+
+    function likePost(postId) {
+    fetch(`/like/${postId}/`, {
+        method: "GET"
+    })
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById(`likes-count-${postId}`).textContent = data.likes_count;
+    });
+}
+
+</script>
+        
+    
+</body>
+</html>

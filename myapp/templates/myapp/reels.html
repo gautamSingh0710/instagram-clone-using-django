@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reels</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+
+    #reelVideo {
+      display: none;
+      width: 100%;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff007f;
+      border: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Reels</h1>
+
+  <button onclick="playReel('reel1')">Watch Reel 1</button>
+  <video id="reel1" class="reelVideo" controls autoplay muted>
+    <source src="/media/songs/reels1.mp4" type="video/mp4">
+  </video>
+  
+  <br><br>
+  
+  <button onclick="playReel('reel2')">Watch Reel 2</button>
+  <video id="reel2" class="reelVideo" controls autoplay muted>
+    <source src="/media/songs/reels2.mp4" type="video/mp4">
+  </video>
+  
+  <script>
+function playReel(id) {
+  const videos = document.getElementsByClassName("reelVideo");
+  for (let v of videos) {
+    v.style.display = "none";
+    v.pause();
+    v.currentTime = 0;
+  }
+  const video = document.getElementById(id);
+  video.style.display = "block";
+  video.play();
+}
+
+  </script>
+
+</body>
+</html>

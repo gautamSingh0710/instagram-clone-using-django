@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <style>
+    .e{
+        border-radius: 50%;
+        border-color: aliceblue;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+    }
+    .header {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .profile {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .profile img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+    }
+    .stats {
+      display: flex;
+      gap: 20px;
+    }
+    .stats div {
+      text-align: center;
+    }
+    .bio {
+      padding: 0 20px;
+      margin-top: -10px;
+    }
+    .bio p {
+      margin: 4px 0;
+    }
+    .buttons {
+      display: flex;
+      gap: 10px;
+      padding: 10px 20px;
+    }
+    .buttons button {
+      background-color: #121212;
+      color: white;
+      border: 1px solid #333;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .highlights {
+      display: flex;
+      gap: 10px;
+      padding: 10px 20px;
+    }
+    .highlight {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      padding: 5px;
+    }
+    .grid img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="profile">
+   <div class="e"><img src="https://i.imgur.com/0y8Ftya.png" ></div>
+    <div>
+      <div class="stats">
+        <div><strong>0</strong><br>posts</div>
+        <div><strong>0</strong><br>followers</div>
+        <div><strong>0</strong><br>following</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bio">
+    <p>🔱 ॐ नमः पार्वती पतये:</p>
+    <p>हर हर महादेव 🌙</p>
+    <p>🌟 Forgot Your Tomorrow. Just Work Hard On Your Today.</p>
+  </div>
+
+  <div class="buttons">
+    <button>Edit profile</button>
+    <button>Share profile</button>
+  </div>
+
+  <div class="highlights">
+    <div class="highlight">Quote</div>
+    <div class="highlight">❤❤</div>
+    <div class="highlight">New</div>
+  </div>
+
+
+
+</body>
+</html>

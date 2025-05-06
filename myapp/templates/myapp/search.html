@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: white;
+    }
+
+    .header {
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #111;
+    }
+
+    .header span {
+      font-size: 18px;
+    }
+
+    .search-bar {
+      background-color: #1c1c1c;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  .right{
+    align-items: end;
+    text-wrap: black;
+    color:rgb(236, 20, 103);
+    border-radius: 8%;
+  }
+    .search-bar input {
+      width: 100%;
+      padding: 8px;
+      background-color: #2c2c2c;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      background-color: #111;
+      padding: 10px 0;
+    }
+
+    .nav i {
+      font-size: 20px;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search"><br><br>
+    <button class="right">Search</button>
+  </div>
+
+</body>
+</html>
